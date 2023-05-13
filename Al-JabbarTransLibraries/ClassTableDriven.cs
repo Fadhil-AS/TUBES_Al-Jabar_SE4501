@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Al_JabbarTransLibraries
 {
-    internal class ClassTableDriven
+    public class ClassTableDriven
     {
         public class Kantor {
             public enum Bandung

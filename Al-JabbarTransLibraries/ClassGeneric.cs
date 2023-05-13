@@ -8,7 +8,7 @@ using static Al_JabbarTransLibraries.ClassTableDriven.Kantor;
 
 namespace Al_JabbarTransLibraries
 {
-    internal class ClassGeneric
+    public class ClassGeneric
     {
         private prosesPesan currentState;
 

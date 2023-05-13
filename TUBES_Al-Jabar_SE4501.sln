@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mainProgram", "mainProgram\mainProgram.csproj", "{9F3AA51F-ACD9-423D-9C87-55DA1CE3E5BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mainProgram", "mainProgram\mainProgram.csproj", "{9F3AA51F-ACD9-423D-9C87-55DA1CE3E5BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Al-JabbarTransLibraries", "Al-JabbarTransLibraries\Al-JabbarTransLibraries.csproj", "{43FAC3BC-C14B-4F98-8786-953D977A005E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Al_JabbarTransLibraries", "Al-JabbarTransLibraries\Al_JabbarTransLibraries.csproj", "{43FAC3BC-C14B-4F98-8786-953D977A005E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject_Automata", "TestProject_Automata\TestProject_Automata.csproj", "{D7915124-07F0-42A1-9E0B-23CB87C349B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{43FAC3BC-C14B-4F98-8786-953D977A005E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43FAC3BC-C14B-4F98-8786-953D977A005E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43FAC3BC-C14B-4F98-8786-953D977A005E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7915124-07F0-42A1-9E0B-23CB87C349B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7915124-07F0-42A1-9E0B-23CB87C349B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7915124-07F0-42A1-9E0B-23CB87C349B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7915124-07F0-42A1-9E0B-23CB87C349B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
