@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mainProgram", "mainProgram\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Al_JabbarTransLibraries", "Al-JabbarTransLibraries\Al_JabbarTransLibraries.csproj", "{43FAC3BC-C14B-4F98-8786-953D977A005E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject_Automata", "TestProject_Automata\TestProject_Automata.csproj", "{D7915124-07F0-42A1-9E0B-23CB87C349B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject_Automata", "TestProject_Automata\TestProject_Automata.csproj", "{D7915124-07F0-42A1-9E0B-23CB87C349B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject_ClassGeneric", "TestProject_ClassGeneric\TestProject_ClassGeneric.csproj", "{7DC7D82A-6585-4870-AC7F-C2842446B130}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D7915124-07F0-42A1-9E0B-23CB87C349B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7915124-07F0-42A1-9E0B-23CB87C349B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7915124-07F0-42A1-9E0B-23CB87C349B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DC7D82A-6585-4870-AC7F-C2842446B130}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DC7D82A-6585-4870-AC7F-C2842446B130}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DC7D82A-6585-4870-AC7F-C2842446B130}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DC7D82A-6585-4870-AC7F-C2842446B130}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

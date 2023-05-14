@@ -8,44 +8,42 @@ namespace Al_JabbarTransLibraries
 {
     public class ClassTableDriven
     {
-        public class Kantor {
-            public enum Bandung
-            {
-                Tasik,
-                Cilacap,
-                Magelang,
-                Yogya,
-                Wonogiri,
-                Pacitan
-            }
+        public enum Bandung
+        {
+            Tasik = 1,
+            Cilacap,
+            Magelang,
+            Yogya,
+            Wonogiri,
+            Pacitan
+        }
 
-            public enum Jakarta
-            {
-                Tasik,
-                Banjar,
-                Pangandaran
-            }
+        public enum Jakarta
+        {
+            Tasik = 1,
+            Banjar,
+            Pangandaran
+        }
 
-            public enum AreaType
-            {
-                Bandung,
-                Jakarta
-            }
+        public enum AreaType
+        {
+            Bandung = 1,
+            Jakarta
+        }
 
-            public enum prosesPesan
-            {
-                ASAL,
-                TUJUAN,
-                HARGA,
-                DIBERANGKATKAN
-            }
+        public enum prosesPesan
+        {
+            ASAL,
+            TUJUAN,
+            HARGA,
+            DIBERANGKATKAN
+        }
 
-            public enum Trigger
-            {
-                PILIH_TUJUAN,
-                CEK_HARGA,
-                BERANGKAT
-            }
+        public enum Trigger
+        {
+            PILIH_TUJUAN,
+            CEK_HARGA,
+            BERANGKAT
         }
     }
 }

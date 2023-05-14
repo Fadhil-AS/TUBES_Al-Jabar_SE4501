@@ -4,7 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Al_JabbarTransLibraries.ClassTableDriven.Kantor;
+using static Al_JabbarTransLibraries.ClassTableDriven;
+using static Al_JabbarTransLibraries.ClassAutomata;
 
 namespace Al_JabbarTransLibraries
 {
@@ -12,89 +13,78 @@ namespace Al_JabbarTransLibraries
     {
         private prosesPesan currentState;
 
+        public void PrintEnumValues<T>()
+        {
+            Type enumType = typeof(T);
+
+            if (enumType.IsEnum)
+            {
+                string[] enumNames = System.Enum.GetNames(enumType);
+
+                for (int i = 0; i < enumNames.Length; i++)
+                {
+                    Console.WriteLine($"{(i + 1)}. {(enumNames[i])}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Tipe data bukan enum.");
+            }
+        }
+
         public AreaType pilihAsal(int choice) {
-            //Debug.Assert(currentState == prosesPesan.ASAL, "Maaf, Anda hanya dapat memilih asal saat state berada di ASAL");
+            Debug.Assert(currentState == prosesPesan.ASAL, "Maaf, Anda hanya dapat memilih asal saat state berada di ASAL");
 
 
             Debug.Assert(choice != null && choice <= 2, "input tidak valid!");
 
             AreaType selectedEnum = AreaType.Bandung;
+            Type enumType = typeof(AreaType);
 
-            if (choice == 1)
+            for (int i = 0; i <= System.Enum.GetNames(enumType).Length; i++)
             {
-                // Menggunakan enum Bandung
-                selectedEnum = AreaType.Bandung; // Ubah Tasik ke enum yang diinginkan
-
-            }
-            else if (choice == 2)
-            {
-                // Menggunakan enum Jakarta
-                selectedEnum = AreaType.Jakarta; // Ubah Tasik ke enum yang diinginkan
-
+                if (choice == i)
+                {
+                    selectedEnum = (AreaType)i;
+                    break;
+                }
             }
             return selectedEnum;
         }
 
         public T pilihTujuan<T>(int choice, int choiceTujuan) where T : Enum {
-            //Debug.Assert(currentState == prosesPesan.TUJUAN, "Maaf, method ini hanya dapat diakses saat state berada di TUJUAN");
-
             AreaType kantorAsal = pilihAsal(choice);
 
             if (kantorAsal == AreaType.Bandung)
             {
-                // Menggunakan enum Bandung
-
-
                 Debug.Assert(choiceTujuan != null && choiceTujuan <= 6, "input tidak valid!");
-                Bandung bandungEnum;
+                Bandung bandungEnum = Bandung.Tasik;
+                Type enumType = typeof(Bandung);
 
-                switch (choiceTujuan)
+                for (int i = 1; i <= System.Enum.GetNames(enumType).Length; i++)
                 {
-                    case 1:
-                        bandungEnum = Bandung.Tasik;
+                    if (choiceTujuan == i)
+                    {
+                        bandungEnum = (Bandung)i;
                         break;
-                    case 2:
-                        bandungEnum = Bandung.Cilacap;
-                        break;
-                    case 3:
-                        bandungEnum = Bandung.Magelang;
-                        break;
-                    case 4:
-                        bandungEnum = Bandung.Yogya;
-                        break;
-                    case 5:
-                        bandungEnum = Bandung.Wonogiri;
-                        break;
-                    case 6:
-                        bandungEnum = Bandung.Pacitan;
-                        break;
-                    default:
-                        throw new ArgumentException("input tidak valid!");
+                    }
                 }
 
                 return (T)(object)bandungEnum;
             }
             else if (kantorAsal == AreaType.Jakarta)
             {
-                // Menggunakan enum Jakarta
-
-
                 Debug.Assert(choiceTujuan != null && choiceTujuan <= 3, "input tidak valid!");
-                Jakarta jakartaEnum;
+                Jakarta jakartaEnum = Jakarta.Tasik;
+                Type enumType = typeof(Bandung);
 
-                switch (choiceTujuan)
+                for (int i = 0; i < System.Enum.GetNames(enumType).Length; i++)
                 {
-                    case 1:
-                        jakartaEnum = Jakarta.Tasik;
+                    if (choiceTujuan == i)
+                    {
+                        jakartaEnum = (Jakarta)i;
                         break;
-                    case 2:
-                        jakartaEnum = Jakarta.Banjar;
-                        break;
-                    case 3:
-                        jakartaEnum = Jakarta.Pangandaran;
-                        break;
-                    default:
-                        throw new ArgumentException("input tidak valid!");
+                    }
                 }
 
                 return (T)(object)jakartaEnum;
@@ -106,7 +96,7 @@ namespace Al_JabbarTransLibraries
         }
 
         public void cekHarga(int choice, int tujuanChoice) {
-            Debug.Assert(currentState == prosesPesan.HARGA, "Maaf, method ini hanya dapat diakses saat state berada di HARGA");
+            //Debug.Assert(currentState == prosesPesan.HARGA, "Maaf, method ini hanya dapat diakses saat state berada di HARGA");
 
             AreaType kantorAsal = pilihAsal(choice);
 

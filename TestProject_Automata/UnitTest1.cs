@@ -1,7 +1,7 @@
 using Al_JabbarTransLibraries;
 using NUnit.Framework;
 using static Al_JabbarTransLibraries.ClassAutomata;
-using static Al_JabbarTransLibraries.ClassTableDriven.Kantor;
+using static Al_JabbarTransLibraries.ClassTableDriven;
 
 
 namespace TestProject_Automata
@@ -19,7 +19,7 @@ namespace TestProject_Automata
             Trigger trigger = Trigger.PILIH_TUJUAN;
 
             // Act
-            var transition = new ClassAutomata.prosesPemesanan.Transition(stateAwal, stateAkhir, trigger);
+            var transition = new ClassAutomata.Transition(stateAwal, stateAkhir, trigger);
 
             // Assert
             Assert.AreEqual(stateAwal, transition.stateAwal);
@@ -30,7 +30,7 @@ namespace TestProject_Automata
         [Test]
         public void TestGetStateBerikutnya()
         {
-            ClassAutomata.prosesPemesanan pesanan = new ClassAutomata.prosesPemesanan();
+            ClassAutomata pesanan = new ClassAutomata();
 
             // Test case 1
             Assert.AreEqual(pesanan.getStateBerikutnya(prosesPesan.ASAL, Trigger.PILIH_TUJUAN), prosesPesan.TUJUAN);
@@ -46,7 +46,7 @@ namespace TestProject_Automata
         public void ActivateTrigger_ShouldUpdateCurrentStateAndPrintMessage()
         {
             // Arrange
-            prosesPemesanan prosesPesan = new prosesPemesanan();
+            ClassAutomata prosesPesan = new ClassAutomata();
 
             // Act
             prosesPesan.activateTrigger(Trigger.PILIH_TUJUAN);
@@ -61,7 +61,7 @@ namespace TestProject_Automata
             using (StringWriter sw = new StringWriter())
             {
                 Console.SetOut(sw);
-                ClassAutomata.prosesPemesanan automata = new ClassAutomata.prosesPemesanan();
+                ClassAutomata automata = new ClassAutomata();
                 automata.printCurrentState();
                 string expectedOutput = "State sekarang adalah : ASAL" + Environment.NewLine;
                 Assert.AreEqual(expectedOutput, sw.ToString());
